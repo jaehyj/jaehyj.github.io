@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Stokisy</title>
-<meta name="description" content="Stokisy scores any stock against the standard you set, in plain English. Join the waitlist.">
+<meta name="description" content="Build conviction in the stocks you own. Stokisy checks any stock against your own standard, with every number explained in plain English. Join the waitlist.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@200;300;400&display=swap">
 <style>
 /* Layout: one dark stage, centered thin headlines, a single light "product window" per act, wide bands stacked top to bottom */
@@ -151,6 +151,32 @@ h3 { font-size: clamp(24px, 3vw, 32px); line-height: 1.15; font-weight: 300; }
 .bigfig span { font: 400 15px var(--body); color: var(--muted); letter-spacing: 0; }
 .chart { width: 100%; height: auto; margin-top: 8px; }
 
+/* the dip: same price chart, two reactions */
+.gap-top { margin-top: clamp(32px, 5vw, 56px); }
+.duo { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 18px; margin-top: clamp(32px, 5vw, 56px); }
+.story { background: var(--stage-3); border-radius: 28px; padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.story.hold { background: var(--paper); color: var(--ink); box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 30px 90px rgba(36, 87, 245, 0.18); }
+.story .who { margin: 0; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.story.hold .who { color: var(--ink-2); }
+.drop { width: 100%; height: auto; display: block; overflow: visible; }
+h1 + .lede { margin-top: 10px; }
+.drop .grid { stroke: var(--line); stroke-width: 1; fill: none; }
+.drop .ln { stroke: var(--accent-soft); stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.drop .dot { fill: var(--accent-soft); }
+.drop .pct { fill: var(--muted); font: 500 13px var(--body); }
+.story.hold .drop .grid { stroke: var(--ink-line); }
+.story.hold .drop .ln { stroke: var(--accent); }
+.story.hold .drop .dot { fill: var(--accent); }
+.story.hold .drop .pct { fill: var(--ink-2); }
+.beats { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.beats li { font: 300 clamp(20px, 2.3vw, 24px)/1.3 var(--display); }
+.beats li.event { font: 500 13px var(--body); color: var(--muted); padding: 8px 0; border-block: 1px dashed var(--line); }
+.story.hold .beats li.event { color: var(--ink-2); border-color: var(--ink-line); }
+.story .result { margin: auto 0 0; padding-top: 18px; border-top: 1px solid var(--line); font: 500 16px/1.4 var(--body); }
+.story.hold .result { border-color: var(--ink-line); color: var(--good-fg); }
+.closer { font: 200 clamp(26px, 3.8vw, 46px)/1.2 var(--display); letter-spacing: -0.02em; text-align: center; max-width: 20em; margin: clamp(36px, 5vw, 64px) auto 0; text-wrap: balance; }
+.closer em { font-style: normal; color: var(--muted); }
+
 /* signup */
 .signup { max-width: 560px; margin: 0 auto; }
 form { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; width: 100%; text-align: left; }
@@ -179,8 +205,8 @@ footer p { margin: 0 0 8px; max-width: 70ch; }
 <meta name="theme-color" content="#050608">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Stokisy">
-<meta property="og:title" content="Stokisy. Your stocks, your standards.">
-<meta property="og:description" content="Stokisy scores any stock against the standard you set, in plain English. Join the waitlist.">
+<meta property="og:title" content="Stokisy. Know why you own it.">
+<meta property="og:description" content="Build conviction in the stocks you own. Stokisy checks any stock against your own standard, with every number explained in plain English. Join the waitlist.">
 <meta property="og:url" content="https://stokisy.com/">
 <meta property="og:image" content="https://stokisy.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -192,6 +218,7 @@ footer p { margin: 0 0 8px; max-width: 70ch; }
   <div class="wrap">
     <a href="#top" aria-label="Stokisy home"><svg class="wm" viewBox="200 414 840 252" role="img" aria-label="Stokisy" xmlns="http://www.w3.org/2000/svg"><path d="M958.087 657.6C923.835 657.6 893.988 643.41 882.245 625.306L892.031 616.254C903.285 632.401 928.484 645.123 958.087 645.123C995.029 645.123 1018.76 625.795 1018.76 593.99V577.109H1018.52C1008.97 598.15 987.2 611.116 961.757 611.116C924.325 611.116 898.881 585.428 898.881 547.507V478.27H912.337V547.017C912.337 578.088 932.643 598.639 962.735 598.639C994.54 598.639 1018.76 576.131 1018.76 541.88V478.27H1032.22V593.99C1032.22 633.624 1003.1 657.6 958.087 657.6Z" fill="currentColor"/><path d="M833.698 606.223C797.49 606.223 768.376 588.363 763.483 562.43L775.716 558.027C779.63 578.822 803.117 593.746 833.454 593.746C858.898 593.746 878.714 582.981 878.714 568.057C878.714 556.559 866.726 549.953 842.017 546.039L816.573 542.369C788.193 537.72 773.269 528.424 773.269 510.319C773.514 488.545 794.799 473.377 824.157 473.377C851.069 473.377 874.066 487.077 880.916 506.16L869.173 511.543C863.791 496.619 845.931 485.61 824.157 485.61C802.628 485.61 786.725 496.13 786.725 509.585C786.481 520.595 796.756 526.222 819.509 529.892L845.197 533.561C875.779 538.699 891.926 547.751 891.926 567.079C891.926 590.321 867.216 606.223 833.698 606.223Z" fill="currentColor"/><path d="M745.347 453.071C738.986 453.071 734.582 448.667 734.582 442.306C734.582 435.945 738.986 431.542 745.347 431.542C751.707 431.542 756.356 435.945 756.356 442.306C756.356 448.667 751.707 453.071 745.347 453.071ZM751.952 601.33H738.496V478.27H751.952V601.33Z" fill="currentColor"/><path d="M631.191 601.33H617.736V422H631.191V535.519H631.436L708.991 478.27H730.52L666.421 525.243L733.211 601.33H715.596L656.146 533.317L631.191 551.666V601.33Z" fill="currentColor"/><g transform="translate(160.7 0)"><path d="M372.042 606.223C325.558 606.223 294.976 579.801 294.976 539.922C294.976 499.799 325.558 473.377 372.042 473.377C418.526 473.377 449.107 499.799 449.107 539.922C449.107 579.801 418.526 606.223 372.042 606.223ZM372.042 593.746C410.452 593.746 435.651 572.461 435.651 539.922C435.651 507.384 410.452 486.099 372.042 486.099C333.631 486.099 308.432 507.384 308.432 539.922C308.432 572.461 333.631 593.746 372.042 593.746Z" fill="currentColor"/><path d="M244.716 606.223C218.538 606.223 203.125 590.81 203.369 564.877V490.013H166.916V478.27H203.125V440.104L216.825 436.679V478.27H285.083V490.013H216.825V564.143C216.581 582.737 227.101 593.991 245.205 593.991C260.618 593.991 274.563 583.715 278.233 568.057L289.732 573.44C284.594 593.012 265.756 606.223 244.716 606.223Z" fill="currentColor"/><path d="M118.215 606.223C82.0066 606.223 52.893 588.363 48 562.43L60.2326 558.027C64.147 578.822 87.6336 593.746 117.971 593.746C143.414 593.746 163.231 582.981 163.231 568.057C163.231 556.559 151.243 549.953 126.533 546.039L101.09 542.369C72.7099 537.72 57.7861 528.424 57.7861 510.319C58.0307 488.545 79.3155 473.377 108.674 473.377C135.585 473.377 158.583 487.077 165.433 506.16L153.69 511.543C148.307 496.619 130.448 485.61 108.674 485.61C87.1443 485.61 71.242 496.13 71.242 509.585C70.9973 520.595 81.2727 526.222 104.025 529.892L129.714 533.561C160.295 538.699 176.442 547.751 176.442 567.079C176.442 590.321 151.733 606.223 118.215 606.223Z" fill="currentColor"/></g></svg></a>
     <nav class="nav-links" aria-label="Sections">
+      <a href="#why">Why</a>
       <a href="#try">Try it</a>
       <a href="#weights-feature">Weights</a>
       <a href="#plain">Plain English</a>
@@ -205,8 +232,8 @@ footer p { margin: 0 0 8px; max-width: 70ch; }
   <section class="hero">
     <div class="wrap center">
       <p class="eyebrow">Coming soon</p>
-      <h1>Your stocks.<br>Your standards.</h1>
-      <p class="lede">Stokisy scores any stock against what you care about, and explains every number in plain English. No trading. No jargon.</p>
+      <h1>Know why<br>you own it.</h1>
+      <p class="lede">Buy on hype and the first dip feels like a warning. Stokisy helps you build a reason to hold: your own standard, checked against numbers explained in plain English.</p>
       <div class="cta-row">
         <a class="pill" href="#signup">Join the waitlist</a>
         <span>Free while in early access</span>
@@ -214,9 +241,57 @@ footer p { margin: 0 0 8px; max-width: 70ch; }
     </div>
   </section>
 
-  <section id="try" aria-label="Try the scorecard">
+  <section class="band tint" id="why">
     <div class="wrap">
-      <div class="window">
+      <div class="center">
+        <p class="eyebrow">Why Stokisy</p>
+        <h2>Same drop.<br>Different reaction.</h2>
+        <p class="lede">Two people own the same stock. It falls 8% in a week. One panics and one stays steady, and the difference is whether they know why they bought it.</p>
+      </div>
+      <div class="duo">
+        <article class="story">
+          <p class="who">Bought because it was trending</p>
+          <svg class="drop" viewBox="0 0 300 96" role="img" aria-label="Price chart: the stock rises, then falls 8 percent">
+            <path class="grid" d="M0 24h300M0 48h300M0 72h300"></path>
+            <path class="ln" d="M0 52 L40 44 L80 48 L120 30 L150 24 L190 40 L230 56 L270 64 L300 70"></path>
+            <circle class="dot" cx="300" cy="70" r="5"></circle>
+            <text class="pct" x="288" y="90" text-anchor="end">-8%</text>
+          </svg>
+          <ul class="beats">
+            <li>“Everyone is talking about it.”</li>
+            <li class="event">The stock falls 8%</li>
+            <li>“I have no idea why I own this. Is it broken? Should I get out?”</li>
+          </ul>
+          <p class="result">Sells out of worry.</p>
+        </article>
+        <article class="story hold">
+          <p class="who">Owns it for reasons they chose</p>
+          <svg class="drop" viewBox="0 0 300 96" role="img" aria-label="Price chart: the same stock rises, then falls 8 percent">
+            <path class="grid" d="M0 24h300M0 48h300M0 72h300"></path>
+            <path class="ln" d="M0 52 L40 44 L80 48 L120 30 L150 24 L190 40 L230 56 L270 64 L300 70"></path>
+            <circle class="dot" cx="300" cy="70" r="5"></circle>
+            <text class="pct" x="288" y="90" text-anchor="end">-8%</text>
+          </svg>
+          <ul class="beats">
+            <li>“It keeps $22 of every $100 it sells, and owes little.”</li>
+            <li class="event">The stock falls 8%</li>
+            <li>“Profit and debt have not changed. My reasons still hold.”</li>
+          </ul>
+          <p class="result">Stays calm. Or sells, because the numbers really changed.</p>
+        </article>
+      </div>
+      <p class="closer">A dip is a question, not a verdict. <em>Stokisy gives you the numbers to answer it.</em></p>
+    </div>
+  </section>
+
+  <section class="band" id="try" aria-label="Build your standard">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow">Build your conviction</p>
+        <h2>Your stocks.<br>Your standards.</h2>
+        <p class="lede">Say what matters to you in a company. Stokisy grades any stock against it and tells you why, in plain English.</p>
+      </div>
+      <div class="window gap-top">
         <div class="demo">
           <div>
             <h3>What matters to you in a company?</h3>
@@ -254,7 +329,7 @@ footer p { margin: 0 0 8px; max-width: 70ch; }
     </div>
   </section>
 
-  <section class="band" id="weights-feature">
+  <section class="band tint" id="weights-feature">
     <div class="wrap">
       <div class="center">
         <p class="eyebrow">Your weights</p>
@@ -284,18 +359,18 @@ footer p { margin: 0 0 8px; max-width: 70ch; }
     </div>
   </section>
 
-  <section class="band tint">
+  <section class="band">
     <div class="wrap">
-      <p class="statement">Most stock apps want you to trade. <em>This one wants you to understand what you are buying first.</em></p>
+      <p class="statement">Conviction comes from reasons you can name, <em>backed by numbers you understand.</em></p>
     </div>
   </section>
 
-  <section class="band" id="plain">
+  <section class="band tint" id="plain">
     <div class="wrap">
       <div class="center">
         <p class="eyebrow">Plain English</p>
         <h2>Every number, as a sentence.</h2>
-        <p class="lede">You should not need a finance degree to read a stock page. Stokisy leads with what a number means and keeps the jargon as a small label.</p>
+        <p class="lede">Conviction needs numbers you understand. Stokisy leads with what each one means and keeps the jargon as a small label.</p>
       </div>
       <div class="plain">
         <article>
@@ -317,7 +392,7 @@ footer p { margin: 0 0 8px; max-width: 70ch; }
     </div>
   </section>
 
-  <section class="band tint" id="more">
+  <section class="band" id="more">
     <div class="wrap">
       <div class="center">
         <p class="eyebrow">What you get</p>
@@ -362,7 +437,7 @@ footer p { margin: 0 0 8px; max-width: 70ch; }
     </div>
   </section>
 
-  <section class="band" id="signup">
+  <section class="band tint" id="signup">
     <div class="wrap">
       <div class="signup center">
         <h2>Be first to try it.</h2>
